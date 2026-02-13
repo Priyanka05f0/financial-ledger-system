@@ -315,3 +315,13 @@ erDiagram
     TRANSACTIONS ||--o{ LEDGER_ENTRIES : "generates"
 ```
 ---
+
+### Expected Outcomes Achieved
+
+- REST API fully functional
+- Double-entry bookkeeping
+- ACID-compliant operations
+- Concurrency-safe withdrawals
+- Immutable ledger
+- Accurate balance calculation
+- Proper error handling
