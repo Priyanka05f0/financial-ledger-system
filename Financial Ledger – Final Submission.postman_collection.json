@@ -1,0 +1,115 @@
+{
+  "info": {
+    "_postman_id": "881a6f58-91e1-453e-9ce0-663d2f77babe",
+    "name": "Financial Ledger – Final Submission",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST /accounts",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": \"user1\",\n  \"account_type\": \"savings\",\n  \"currency\": \"INR\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/accounts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["accounts"]
+        }
+      }
+    },
+    {
+      "name": "GET /accounts/:id",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/accounts/ACCOUNT_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["accounts", "ACCOUNT_ID"]
+        }
+      }
+    },
+    {
+      "name": "POST /deposits",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"account_id\": \"ACCOUNT_ID\",\n  \"amount\": 1000,\n  \"currency\": \"INR\",\n  \"description\": \"Initial funding\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/deposits",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["deposits"]
+        }
+      }
+    },
+    {
+      "name": "POST /withdrawals",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"account_id\": \"ACCOUNT_ID\",\n  \"amount\": 200,\n  \"currency\": \"INR\",\n  \"description\": \"ATM withdrawal\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/withdrawals",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["withdrawals"]
+        }
+      }
+    },
+    {
+      "name": "POST /transfers",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"source_account\": \"SOURCE_ACCOUNT_ID\",\n  \"destination_account\": \"DESTINATION_ACCOUNT_ID\",\n  \"amount\": 300,\n  \"currency\": \"INR\",\n  \"description\": \"Transfer test\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/transfers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["transfers"]
+        }
+      }
+    },
+    {
+      "name": "GET /accounts/:id/ledger",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/accounts/ACCOUNT_ID/ledger",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["accounts", "ACCOUNT_ID", "ledger"]
+        }
+      }
+    }
+  ]
+}

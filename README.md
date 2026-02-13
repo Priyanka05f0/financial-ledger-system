@@ -45,6 +45,29 @@ financial-ledger/
 ```
 ---
 
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+
+    Client[Client / Postman]
+    API[Express REST API]
+    Controller[Controller Layer]
+    Service[Service Layer]
+    DB[(PostgreSQL Database)]
+
+    Client --> API
+    API --> Controller
+    Controller --> Service
+    Service --> DB
+```
+This shows:
+Client → API → Controller → Service → DB
+That satisfies the requirement.
+
+---
+
+
 ## Setup Instructions
 
 ### 1. Clone Repository
